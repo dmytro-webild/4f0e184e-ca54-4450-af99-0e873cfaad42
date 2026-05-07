@@ -136,7 +136,7 @@ export default function LandingPage() {
         { id: "2", title: "Is it family-friendly?", content: "Absolutely. We are designed specifically for family comfort." },
         { id: "3", title: "Check-in and Check-out times?", content: "Check-in begins at 3:00 PM and check-out is required by 12:00 PM to ensure your chalet is ready for every guest." },
         { id: "4", title: "Cancellation & Deposit Policy", content: "Enjoy peace of mind with our 48-hour free cancellation policy. A 200 SAR security deposit is required at check-in, refundable upon chalet inspection at check-out." },
-        { id: "5", title: "How can I book?", content: "You can book easily via WhatsApp or by calling our direct number." },
+        { id: "5", title: "How can I book?", content: "You can book easily via WhatsApp (https://wa.me/966561502929) or by calling our direct line at 056-150-2929." },
       ]}
       sideTitle="Common Questions"
       sideDescription="We are here to answer everything you need to know about your stay."

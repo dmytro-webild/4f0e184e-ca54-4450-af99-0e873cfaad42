@@ -87,8 +87,8 @@ export default function LandingPage() {
       useInvertedBackground={false}
       products={[
         { id: "1", name: "Family Chalet", price: "From 500 SAR", imageSrc: "http://img.b2bpic.net/free-photo/still-life-with-wooden-inscription-home-living-room_169016-5186.jpg" },
-        { id: "2", name: "VIP Luxury Chalet", price: "From 900 SAR", imageSrc: "http://img.b2bpic.net/free-photo/beautiful-stairs-outdoors-water-summer_1203-5062.jpg" },
-        { id: "3", name: "Poolside Chalet", price: "From 750 SAR", imageSrc: "http://img.b2bpic.net/free-photo/attractive-mother-with-her-four-kids-winter-day_627829-207.jpg" },
+        { id: "2", name: "VIP Luxury Chalet", price: "From 500 SAR", imageSrc: "http://img.b2bpic.net/free-photo/beautiful-stairs-outdoors-water-summer_1203-5062.jpg" },
+        { id: "3", name: "Poolside Chalet", price: "From 500 SAR", imageSrc: "http://img.b2bpic.net/free-photo/attractive-mother-with-her-four-kids-winter-day_627829-207.jpg" },
       ]}
       title="Our Featured Chalets"
       description="Choose from our selection of premium chalets designed for ultimate family comfort."

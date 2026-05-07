@@ -133,7 +133,8 @@ export default function LandingPage() {
       faqs={[
         { id: "1", title: "Do you offer private pools?", content: "Yes, all our luxury and pool-side chalets feature private pools." },
         { id: "2", title: "Is it family-friendly?", content: "Absolutely. We are designed specifically for family comfort." },
-        { id: "3", title: "How can I book?", content: "You can book easily via WhatsApp or by calling our direct number." },
+        { id: "3", title: "Check-in and Check-out times?", content: "Check-in begins at 3:00 PM and check-out is required by 12:00 PM to ensure your chalet is ready for every guest." },
+        { id: "4", title: "How can I book?", content: "You can book easily via WhatsApp or by calling our direct number." },
       ]}
       sideTitle="Common Questions"
       sideDescription="We are here to answer everything you need to know about your stay."

@@ -71,7 +71,7 @@ export default function LandingPage() {
       ]}
       mediaItems={[
         {
-          imageSrc: "http://img.b2bpic.net/free-photo/infinity-pool-overlooking-ocean-sunset_23-2151993704.jpg",
+          imageSrc: "http://img.b2bpic.net/free-photo/infinity-pool-overlooking-ocean-sunset_23-2151993704.jpg?_wi=1",
           imageAlt: "Resort pool at sunset",
         },
         {
@@ -140,13 +140,13 @@ export default function LandingPage() {
           id: "1",
           name: "Family Chalet",
           price: "From 500 SAR",
-          imageSrc: "http://img.b2bpic.net/free-photo/still-life-with-wooden-inscription-home-living-room_169016-5186.jpg",
+          imageSrc: "http://img.b2bpic.net/free-photo/still-life-with-wooden-inscription-home-living-room_169016-5186.jpg?_wi=1",
         },
         {
           id: "2",
           name: "VIP Luxury Chalet",
           price: "From 900 SAR",
-          imageSrc: "http://img.b2bpic.net/free-photo/beautiful-stairs-outdoors-water-summer_1203-5062.jpg",
+          imageSrc: "http://img.b2bpic.net/free-photo/beautiful-stairs-outdoors-water-summer_1203-5062.jpg?_wi=1",
         },
         {
           id: "3",
@@ -197,7 +197,7 @@ export default function LandingPage() {
           icon: Wifi,
           title: "Fast WiFi",
           description: "Stay connected while enjoying nature.",
-          imageSrc: "http://img.b2bpic.net/free-photo/infinity-pool-overlooking-ocean-sunset_23-2151993704.jpg",
+          imageSrc: "http://img.b2bpic.net/free-photo/infinity-pool-overlooking-ocean-sunset_23-2151993704.jpg?_wi=2",
           imageAlt: "umbrella paradise tourism swimming luxury",
         },
         {
@@ -205,7 +205,7 @@ export default function LandingPage() {
           icon: Coffee,
           title: "BBQ Area",
           description: "Perfect spaces for family gatherings.",
-          imageSrc: "http://img.b2bpic.net/free-photo/still-life-with-wooden-inscription-home-living-room_169016-5186.jpg",
+          imageSrc: "http://img.b2bpic.net/free-photo/still-life-with-wooden-inscription-home-living-room_169016-5186.jpg?_wi=2",
           imageAlt: "umbrella paradise tourism swimming luxury",
         },
         {
@@ -213,7 +213,7 @@ export default function LandingPage() {
           icon: ShieldCheck,
           title: "Secure Privacy",
           description: "Designed for maximum peace of mind.",
-          imageSrc: "http://img.b2bpic.net/free-photo/beautiful-stairs-outdoors-water-summer_1203-5062.jpg",
+          imageSrc: "http://img.b2bpic.net/free-photo/beautiful-stairs-outdoors-water-summer_1203-5062.jpg?_wi=2",
           imageAlt: "umbrella paradise tourism swimming luxury",
         },
       ]}

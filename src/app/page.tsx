@@ -14,6 +14,12 @@ import TestimonialCardThirteen from '@/components/sections/testimonial/Testimoni
 import { Coffee, ShieldCheck, Star, Users, Waves, Wifi, Globe } from "lucide-react";
 
 export default function LandingPage() {
+  const toggleLanguage = () => {
+    const lang = document.documentElement.lang;
+    document.documentElement.lang = lang === "en" ? "ar" : "en";
+    document.documentElement.dir = lang === "en" ? "rtl" : "ltr";
+  };
+
   return (
     <ThemeProvider
         defaultButtonVariant="icon-arrow"
@@ -29,7 +35,10 @@ export default function LandingPage() {
     >
       <ReactLenis root>
         <div className="fixed top-4 right-4 z-[9999]">
-            <button className="flex items-center gap-2 bg-white/10 backdrop-blur p-2 rounded-full border border-white/20 hover:bg-white/20">
+            <button 
+                onClick={toggleLanguage}
+                className="flex items-center gap-2 bg-white/10 backdrop-blur p-2 rounded-full border border-white/20 hover:bg-white/20"
+            >
                 <Globe className="w-4 h-4" />
                 <span className="text-sm">EN / AR</span>
             </button>

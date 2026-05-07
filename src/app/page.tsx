@@ -15,9 +15,12 @@ import { Coffee, ShieldCheck, Star, Users, Waves, Wifi, Globe } from "lucide-rea
 
 export default function LandingPage() {
   const toggleLanguage = () => {
-    const lang = document.documentElement.lang;
-    document.documentElement.lang = lang === "en" ? "ar" : "en";
-    document.documentElement.dir = lang === "en" ? "rtl" : "ltr";
+    const newLang = document.documentElement.lang === "en" ? "ar" : "en";
+    document.documentElement.lang = newLang;
+    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
+    
+    // Force translation by re-rendering or using a translation library trigger if available.
+    // Since we are doing a manual language switch, updating the document attributes triggers RTL/LTR layout changes.
   };
 
   return (

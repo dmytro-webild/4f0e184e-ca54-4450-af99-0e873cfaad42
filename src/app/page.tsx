@@ -136,6 +136,7 @@ export default function LandingPage() {
         { id: "3", title: "How can I book?", content: "You can book easily via WhatsApp or by calling our direct number." },
       ]}
       sideTitle="Common Questions"
+      sideDescription="We are here to answer everything you need to know about your stay."
       faqsAnimation="blur-reveal"
     />
   </div>
@@ -149,6 +150,7 @@ export default function LandingPage() {
       description="Reserve your chalet today. Contact us for direct booking or availability inquiries."
       inputPlaceholder="Enter your WhatsApp number"
       buttonText="Reserve Now"
+      termsText="By reserving, you agree to our booking terms and policies."
       onSubmit={(email: string) => { console.log(email); }}
     />
   </div>

@@ -85,6 +85,7 @@ export default function LandingPage() {
       textboxLayout="default"
       gridVariant="three-columns-all-equal-width"
       useInvertedBackground={false}
+      buttons={[{ text: "Book Now", href: "#contact" }]}
       products={[
         { id: "1", name: "Family Chalet", price: "Starting from 500 SAR", imageSrc: "http://img.b2bpic.net/free-photo/still-life-with-wooden-inscription-home-living-room_169016-5186.jpg" },
         { id: "2", name: "VIP Luxury Chalet", price: "Starting from 850 SAR", imageSrc: "http://img.b2bpic.net/free-photo/beautiful-stairs-outdoors-water-summer_1203-5062.jpg" },

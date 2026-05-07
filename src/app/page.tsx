@@ -66,9 +66,9 @@ export default function LandingPage() {
         { text: "WhatsApp Reservation", href: "https://wa.me/966561502929" },
       ]}
       mediaItems={[
-        { imageSrc: "http://img.b2bpic.net/free-photo/infinity-pool-overlooking-ocean-sunset_23-2151993704.jpg", imageAlt: "Resort pool at sunset" },
-        { imageSrc: "http://img.b2bpic.net/free-photo/luxurious-villa-with-modern-architectural-design_23-2151694094.jpg", imageAlt: "Family gathering space" },
-        { imageSrc: "http://img.b2bpic.net/free-photo/beautiful-silhouette-luxury-umbrella-chair-around-swimming-pool-hotel-pool-resort-with-coconut-palm-tree-sunrise-times-boost-up-color-processing_1339-2657.jpg", imageAlt: "Mountain view exterior" },
+        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195248054-upddya8l.png", imageAlt: "Resort pool at sunset" },
+        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195274963-ccgflh66.png", imageAlt: "Family gathering space" },
+        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778192267988-pmpe4vzf.png", imageAlt: "Mountain view exterior" },
       ]}
       mediaAnimation="blur-reveal"
       titleClassName="text-6xl md:text-8xl font-bold drop-shadow-2xl text-shadow-lg"

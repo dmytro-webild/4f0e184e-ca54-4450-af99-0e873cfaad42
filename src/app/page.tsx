@@ -11,7 +11,7 @@ import HeroBillboardGallery from '@/components/sections/hero/HeroBillboardGaller
 import NavbarStyleFullscreen from '@/components/navbar/NavbarStyleFullscreen/NavbarStyleFullscreen';
 import ProductCardOne from '@/components/sections/product/ProductCardOne';
 import TestimonialCardThirteen from '@/components/sections/testimonial/TestimonialCardThirteen';
-import { Coffee, ShieldCheck, Star, Users, Waves, Wifi } from "lucide-react";
+import { Coffee, ShieldCheck, Star, Users, Waves, Wifi, Globe } from "lucide-react";
 
 export default function LandingPage() {
   return (
@@ -28,6 +28,13 @@ export default function LandingPage() {
         headingFontWeight="medium"
     >
       <ReactLenis root>
+        <div className="fixed top-4 right-4 z-[9999]">
+            <button className="flex items-center gap-2 bg-white/10 backdrop-blur p-2 rounded-full border border-white/20 hover:bg-white/20">
+                <Globe className="w-4 h-4" />
+                <span className="text-sm">EN / AR</span>
+            </button>
+        </div>
+
   <div id="nav" data-section="nav">
       <NavbarStyleFullscreen
       navItems={[

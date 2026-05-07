@@ -89,10 +89,10 @@ export default function LandingPage() {
       products={[
         { id: "1", name: "Family Chalet", price: "Starting from 500 SAR", imageSrc: "http://img.b2bpic.net/free-photo/still-life-with-wooden-inscription-home-living-room_169016-5186.jpg" },
         { id: "2", name: "VIP Luxury Chalet", price: "Starting from 850 SAR", imageSrc: "http://img.b2bpic.net/free-photo/beautiful-stairs-outdoors-water-summer_1203-5062.jpg" },
-        { id: "3", name: "Poolside Chalet", price: "Starting from 700 SAR", imageSrc: "http://img.b2bpic.net/free-photo/attractive-mother-with-her-four-kids-winter-day_627829-207.jpg" },
+        { id: "3", name: "Poolside Retreat", price: "Starting from 700 SAR", imageSrc: "http://img.b2bpic.net/free-photo/attractive-mother-with-her-four-kids-winter-day_627829-207.jpg" },
       ]}
       title="Our Featured Chalets"
-      description="Choose from our selection of premium chalets designed for ultimate family comfort."
+      description="Select your perfect sanctuary: our Family Chalet offers mountain vistas, the VIP Luxury Chalet provides elite privacy, and our Poolside Retreat grants exclusive access to private cooling waters."
     />
   </div>
 

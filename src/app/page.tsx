@@ -134,7 +134,7 @@ export default function LandingPage() {
         { id: "1", title: "Do you offer private pools?", content: "Yes, all our luxury and pool-side chalets feature private pools." },
         { id: "2", title: "Is it family-friendly?", content: "Absolutely. We are designed specifically for family comfort." },
         { id: "3", title: "Check-in and Check-out times?", content: "Check-in begins at 3:00 PM and check-out is required by 12:00 PM to ensure your chalet is ready for every guest." },
-        { id: "4", title: "Cancellation & Deposit Policy", content: "Cancellations made 48 hours prior to check-in are fully refundable. A 200 SAR security deposit is required at check-in, refundable upon chalet inspection at check-out." },
+        { id: "4", title: "Cancellation & Deposit Policy", content: "Enjoy peace of mind with our 48-hour free cancellation policy. A 200 SAR security deposit is required at check-in, refundable upon chalet inspection at check-out." },
         { id: "5", title: "How can I book?", content: "You can book easily via WhatsApp or by calling our direct number." },
       ]}
       sideTitle="Common Questions"

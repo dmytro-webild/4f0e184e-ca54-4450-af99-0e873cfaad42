@@ -71,6 +71,7 @@ export default function LandingPage() {
         { imageSrc: "http://img.b2bpic.net/free-photo/beautiful-silhouette-luxury-umbrella-chair-around-swimming-pool-hotel-pool-resort-with-coconut-palm-tree-sunrise-times-boost-up-color-processing_1339-2657.jpg", imageAlt: "Mountain view exterior" },
       ]}
       mediaAnimation="blur-reveal"
+      titleClassName="text-6xl md:text-8xl font-bold drop-shadow-2xl text-shadow-lg"
     />
   </div>
 

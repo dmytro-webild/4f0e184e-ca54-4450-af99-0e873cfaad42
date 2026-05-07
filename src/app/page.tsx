@@ -148,7 +148,7 @@ export default function LandingPage() {
       tag="Ready to Book?"
       title="Your Private Escape Awaits"
       description="Reserve your chalet today. Contact us for direct booking or availability inquiries."
-      inputPlaceholder="Enter your WhatsApp number"
+      inputPlaceholder="Enter your WhatsApp number for booking"
       buttonText="Reserve Now"
       termsText="By reserving, you agree to our booking terms and policies."
       onSubmit={(email: string) => { console.log(email); }}

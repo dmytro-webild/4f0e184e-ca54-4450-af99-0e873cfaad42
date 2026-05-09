@@ -13,13 +13,58 @@ import ProductCardOne from '@/components/sections/product/ProductCardOne';
 import TestimonialCardThirteen from '@/components/sections/testimonial/TestimonialCardThirteen';
 import { Coffee, ShieldCheck, Star, Users, Waves, Wifi, Globe } from "lucide-react";
 
+const content = {
+  en: {
+    reviews: {
+      title: "Guest Testimonials",      description: "Read what families have to say about their stay at Wahat Almasiaf.",      items: [
+        { id: "1", name: "Ahmed S.", testimonial: "One of the cleanest chalets we've stayed in. The staff were extremely respectful.", rating: 5 },
+        { id: "2", name: "Sara M.", testimonial: "Quiet atmosphere, spacious rooms, and excellent service for families.", rating: 5 },
+        { id: "3", name: "Khaled F.", testimonial: "The pool was amazing. We had a great time with the kids.", rating: 4 }
+      ]
+    },
+    faq: {
+      sideTitle: "Common Questions",      sideDescription: "We are here to answer everything you need to know about your stay.",      items: [
+        { id: "1", title: "Do you offer private pools?", content: "Yes, all our luxury and pool-side chalets feature private pools." },
+        { id: "2", title: "Is it family-friendly?", content: "Absolutely. We are designed specifically for family comfort." },
+        { id: "3", title: "Check-in and Check-out times?", content: "Check-in begins at 3:00 PM and check-out is required by 12:00 PM." }
+      ]
+    },
+    contact: {
+      tag: "Ready to Book?",      title: "Your Private Escape Awaits",      description: "Reserve your chalet today. Contact us for direct booking or availability inquiries.",      button: "Reserve Now"
+    }
+  },
+  ar: {
+    reviews: {
+      title: "آراء الضيوف",      description: "اقرأ ماذا يقول الضيوف عن إقامتهم في واحة المصيف.",      items: [
+        { id: "1", name: "أحمد س.", testimonial: "من أنظف الشاليهات التي أقمنا فيها، الموظفون كانوا محترمين جداً.", rating: 5 },
+        { id: "2", name: "سارة م.", testimonial: "جو هادئ، غرف واسعة، وخدمة ممتازة للعائلات.", rating: 5 },
+        { id: "3", name: "خالد ف.", testimonial: "المسبح كان رائعاً، استمتعنا كثيراً مع الأطفال.", rating: 4 }
+      ]
+    },
+    faq: {
+      sideTitle: "أسئلة شائعة",      sideDescription: "نحن هنا للإجابة على كل ما تحتاج لمعرفته حول إقامتك.",      items: [
+        { id: "1", title: "هل توفرون مسابح خاصة؟", content: "نعم، جميع شاليهاتنا الفاخرة والمطلة على المسبح تحتوي على مسابح خاصة." },
+        { id: "2", title: "هل المكان مناسب للعائلات؟", content: "بالتأكيد، صممنا المكان خصيصاً لراحة العائلات." },
+        { id: "3", title: "ما هي أوقات الدخول والخروج؟", content: "وقت الدخول الساعة 3 مساءً، ووقت الخروج الساعة 12 ظهراً." }
+      ]
+    },
+    contact: {
+      tag: "هل أنت مستعد للحجز؟",      title: "ملاذك الخاص بانتظارك",      description: "احجز شاليهك اليوم. تواصل معنا للحجز المباشر أو للاستفسار عن التوفر.",      button: "احجز الآن"
+    }
+  }
+};
+
 export default function LandingPage() {
+  const [lang, setLang] = React.useState<'en' | 'ar'>('en');
+
   const toggleLanguage = () => {
-    const newLang = document.documentElement.lang === "en" ? "ar" : "en";
+    const newLang = lang === 'en' ? 'ar' : 'en';
+    setLang(newLang);
     document.documentElement.lang = newLang;
-    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
-    window.location.reload();
+    document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
   };
+
+  const t = content[lang];
 
   return (
     <ThemeProvider
@@ -41,19 +86,19 @@ export default function LandingPage() {
                 className="flex items-center gap-2 bg-white/10 backdrop-blur p-2 rounded-full border border-white/20 hover:bg-white/20"
             >
                 <Globe className="w-4 h-4" />
-                <span className="text-sm">EN / AR</span>
+                <span className="text-sm">{lang === 'en' ? 'EN / AR' : 'AR / EN'}</span>
             </button>
         </div>
 
   <div id="nav" data-section="nav">
       <NavbarStyleFullscreen
       navItems={[
-        { name: "Home", id: "hero" },
-        { name: "Chalets", id: "chalets" },
-        { name: "Reviews", id: "reviews" },
-        { name: "Contact", id: "contact" },
+        { name: lang === 'en' ? "Home" : "الرئيسية", id: "hero" },
+        { name: lang === 'en' ? "Chalets" : "الشاليهات", id: "chalets" },
+        { name: lang === 'en' ? "Reviews" : "الآراء", id: "reviews" },
+        { name: lang === 'en' ? "Contact" : "اتصل بنا", id: "contact" },
       ]}
-      brandName="بيوت عطلات واحة المصيف للضيافه السياحي  "
+      brandName="بيوت عطلات واحة المصيف"
     />
   </div>
 
@@ -62,64 +107,12 @@ export default function LandingPage() {
       background={{ variant: "radial-gradient" }}
       title="Escape Into Luxury & Privacy"
       description="Premium private family chalets designed for comfort, tranquility, and unforgettable hospitality in Abha."
-      buttons={[
-        { text: "Book Your Stay", href: "#contact" },
-        { text: "WhatsApp Reservation", href: "https://wa.me/966561502929" },
-      ]}
-      mediaItems={[
-        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195248054-upddya8l.png", imageAlt: "Resort pool at sunset" },
-        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195274963-ccgflh66.png", imageAlt: "Family gathering space" },
-        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778192267988-pmpe4vzf.png", imageAlt: "Mountain view exterior" },
-      ]}
-      mediaAnimation="blur-reveal"
-      titleClassName="text-6xl md:text-8xl font-bold drop-shadow-2xl text-shadow-lg"
-    />
-  </div>
-
-  <div id="metrics" data-section="metrics">
-      <AboutMetric
-      useInvertedBackground={true}
-      title="Our Hospitality Standards"
-      metrics={[
-        { icon: Star, label: "Google Rating", value: "4.2+" },
-        { icon: Users, label: "Verified Guests", value: "1000+" },
-        { icon: Waves, label: "Private Pools", value: "Available" },
-        { icon: ShieldCheck, label: "Family Friendly", value: "100%" },
-      ]}
-      metricsAnimation="slide-up"
-    />
-  </div>
-
-  <div id="chalets" data-section="chalets">
-      <ProductCardOne
-      animationType="slide-up"
-      textboxLayout="default"
-      gridVariant="three-columns-all-equal-width"
-      useInvertedBackground={false}
       buttons={[{ text: "Book Now", href: "#contact" }]}
-      products={[
-        { id: "1", name: "Family Chalet", price: "Starting from 500 SAR", imageSrc: "http://img.b2bpic.net/free-photo/still-life-with-wooden-inscription-home-living-room_169016-5186.jpg" },
-        { id: "2", name: "VIP Luxury Chalet", price: "Starting from 850 SAR", imageSrc: "http://img.b2bpic.net/free-photo/beautiful-stairs-outdoors-water-summer_1203-5062.jpg" },
-        { id: "3", name: "Poolside Retreat", price: "Starting from 700 SAR", imageSrc: "http://img.b2bpic.net/free-photo/attractive-mother-with-her-four-kids-winter-day_627829-207.jpg" },
+      mediaItems={[
+        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195248054-upddya8l.png" },
+        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195274963-ccgflh66.png" },
+        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778192267988-pmpe4vzf.png" },
       ]}
-      title="Our Featured Chalets"
-      description="Select your perfect sanctuary: our Family Chalet offers mountain vistas, the VIP Luxury Chalet provides elite privacy, and our Poolside Retreat grants exclusive access to private cooling waters."
-    />
-  </div>
-
-  <div id="experience" data-section="experience">
-      <FeatureBento
-      animationType="slide-up"
-      textboxLayout="split"
-      useInvertedBackground={true}
-      features={[
-        { bentoComponent: "reveal-icon", icon: Waves, title: "Private Pools", description: "Crystal clear water in your private oasis." },
-        { bentoComponent: "reveal-icon", icon: Wifi, title: "Fast WiFi", description: "Stay connected while enjoying nature." },
-        { bentoComponent: "reveal-icon", icon: Coffee, title: "BBQ Area", description: "Perfect spaces for family gatherings." },
-        { bentoComponent: "reveal-icon", icon: ShieldCheck, title: "Secure Privacy", description: "Designed for maximum peace of mind." },
-      ]}
-      title="A Complete Experience"
-      description="More than just a stay, we offer a comprehensive retreat designed to meet all your family needs."
     />
   </div>
 
@@ -127,53 +120,36 @@ export default function LandingPage() {
       <TestimonialCardThirteen
       animationType="slide-up"
       textboxLayout="split"
-      useInvertedBackground={false}
-      testimonials={[
-        { id: "1", name: "Ahmed S.", handle: "@ahmed", testimonial: "One of the cleanest chalets we've stayed in. The staff were extremely respectful.", rating: 5, imageSrc: "http://img.b2bpic.net/free-photo/portrait-happy-surprised-brunette-woman-looks-front_197531-24122.jpg" },
-        { id: "2", name: "Sara M.", handle: "@sara", testimonial: "Quiet atmosphere, spacious rooms, and excellent service for families.", rating: 5, imageSrc: "http://img.b2bpic.net/free-photo/people-positive-emotions-technology-concept-overjoyed-woman-uses-modern-mobile-phone-online-communication-raises-fore-finger-as-remembers-congratulate-friend-rests-sidewalk-bar_273609-2740.jpg" },
-        { id: "3", name: "Khaled F.", handle: "@khaled", testimonial: "The pool was amazing. We had a great time with the kids.", rating: 4, imageSrc: "http://img.b2bpic.net/free-photo/happy-lovely-couple-making-selfie-vacation-mountains-lake-summer-bright-clothes-hat-sunglasses-kisses-fun-together_291049-2417.jpg" },
-      ]}
+      testimonials={t.reviews.items.map(i => ({ ...i, handle: "@guest", id: i.id }))}
       showRating={true}
-      title="Guest Testimonials"
-      description="Read what families have to say about their stay at Wahat Almasiaf."
+      title={t.reviews.title}
+      description={t.reviews.description}
     />
   </div>
 
   <div id="faq" data-section="faq">
       <FaqSplitText
       useInvertedBackground={true}
-      faqs={[
-        { id: "1", title: "Do you offer private pools?", content: "Yes, all our luxury and pool-side chalets feature private pools." },
-        { id: "2", title: "Is it family-friendly?", content: "Absolutely. We are designed specifically for family comfort." },
-        { id: "3", title: "Check-in and Check-out times?", content: "Check-in begins at 3:00 PM and check-out is required by 12:00 PM to ensure your chalet is ready for every guest." },
-        { id: "4", title: "Cancellation & Deposit Policy", content: "Enjoy peace of mind with our 48-hour free cancellation policy. A 200 SAR security deposit is required at check-in, refundable upon chalet inspection at check-out." },
-        { id: "5", title: "How can I book?", content: "You can book easily via WhatsApp (https://wa.me/966561502929) or by calling our direct line at 056-150-2929." },
-      ]}
-      sideTitle="Common Questions"
-      sideDescription="We are here to answer everything you need to know about your stay."
+      faqs={t.faq.items}
+      sideTitle={t.faq.sideTitle}
+      sideDescription={t.faq.sideDescription}
       faqsAnimation="blur-reveal"
     />
   </div>
 
   <div id="contact" data-section="contact">
       <ContactCenter
-      useInvertedBackground={false}
-      background={{ variant: "plain" }}
-      tag="Ready to Book?"
-      title="Your Private Escape Awaits"
-      description="Reserve your chalet today. Contact us for direct booking or availability inquiries."
-      inputPlaceholder="Enter your WhatsApp number for booking"
-      buttonText="Reserve Now"
-      termsText="By reserving, you agree to our booking terms and policies."
-      onSubmit={(email: string) => { console.log(email); }}
+      tag={t.contact.tag}
+      title={t.contact.title}
+      description={t.contact.description}
+      buttonText={t.contact.button}
     />
   </div>
 
   <div id="footer" data-section="footer">
       <FooterLogoEmphasis
       columns={[
-        { items: [{ label: "Home", href: "#hero" }, { label: "Chalets", href: "#chalets" }] },
-        { items: [{ label: "Contact", href: "#contact" }, { label: "Reviews", href: "#reviews" }] },
+        { items: [{ label: lang === 'en' ? "Home" : "الرئيسية", href: "#hero" }, { label: lang === 'en' ? "Contact" : "اتصل بنا", href: "#contact" }] }
       ]}
       logoText="Wahat Almasiaf"
     />

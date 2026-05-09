@@ -18,9 +18,7 @@ export default function LandingPage() {
     const newLang = document.documentElement.lang === "en" ? "ar" : "en";
     document.documentElement.lang = newLang;
     document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
-    
-    // Force translation by re-rendering or using a translation library trigger if available.
-    // Since we are doing a manual language switch, updating the document attributes triggers RTL/LTR layout changes.
+    window.location.reload();
   };
 
   return (

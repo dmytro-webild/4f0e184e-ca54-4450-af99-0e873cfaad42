@@ -53,7 +53,7 @@ export default function LandingPage() {
         { name: "Reviews", id: "reviews" },
         { name: "Contact", id: "contact" },
       ]}
-      brandName="Wahat Almasiaf"
+      brandName="بيوت عطلات واحة المصيف للضيافه السياحي  "
     />
   </div>
 

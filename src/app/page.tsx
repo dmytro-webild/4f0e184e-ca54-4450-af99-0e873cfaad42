@@ -116,11 +116,11 @@ export default function LandingPage() {
         <div id="hero" data-section="hero">
             <HeroBillboardGallery
               background={{ variant: "radial-gradient" }}
-              title="Escape Into Luxury & Privacy"
-              description="Premium private family chalets designed for comfort, tranquility, and unforgettable hospitality in Abha."
+              title="بيوت عطلات واحة المصيف للضيافه السياحي  "
+              description="Wahat Almasif"
               buttons={[{ text: lang === 'en' ? "Book Now" : "احجز الآن", href: "#contact" }]}
               mediaItems={[
-                { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195248054-upddya8l.png" },
+                { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778710060577-tg3ujrnb.jpg" },
                 { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195274963-ccgflh66.png" },
                 { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778192267988-pmpe4vzf.png" },
               ]}

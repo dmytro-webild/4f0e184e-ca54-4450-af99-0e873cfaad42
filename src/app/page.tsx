@@ -9,7 +9,7 @@ import FooterLogoEmphasis from '@/components/sections/footer/FooterLogoEmphasis'
 import HeroBillboardGallery from '@/components/sections/hero/HeroBillboardGallery';
 import NavbarStyleFullscreen from '@/components/navbar/NavbarStyleFullscreen/NavbarStyleFullscreen';
 import TestimonialCardThirteen from '@/components/sections/testimonial/TestimonialCardThirteen';
-import { Globe, Bot, X, MessageSquare } from "lucide-react";
+import { Globe, Bot, X, MessageSquare, Send } from "lucide-react";
 
 const content = {
   en: {
@@ -29,6 +29,9 @@ const content = {
     },
     contact: {
       tag: "Ready to Book?", title: "Your Private Escape Awaits", description: "Reserve your chalet today. Contact us for direct booking or availability inquiries.", button: "Reserve Now"
+    },
+    ai: {
+        placeholder: "How can I assist you with your booking today?",        input: "Type your message..."
     }
   },
   ar: {
@@ -48,6 +51,9 @@ const content = {
     },
     contact: {
       tag: "هل أنت مستعد للحجز؟", title: "ملاذك الخاص بانتظارك", description: "احجز شاليهك اليوم. تواصل معنا للحجز المباشر أو للاستفسار عن التوفر.", button: "احجز الآن"
+    },
+    ai: {
+        placeholder: "كيف يمكنني مساعدتك في حجزك اليوم؟",        input: "اكتب رسالتك..."
     }
   }
 };
@@ -55,6 +61,7 @@ const content = {
 export default function LandingPage() {
   const [lang, setLang] = React.useState<'en' | 'ar'>('en');
   const [showAi, setShowAi] = React.useState(false);
+  const [aiMessage, setAiMessage] = React.useState("");
 
   const toggleLanguage = () => {
     const newLang = lang === 'en' ? 'ar' : 'en';
@@ -101,8 +108,24 @@ export default function LandingPage() {
                     <Bot className="w-6 h-6" />
                     <h3 className="font-bold">{lang === 'en' ? 'AI Assistant' : 'المساعد الذكي'}</h3>
                 </div>
-                <p className="text-sm mb-4">{lang === 'en' ? 'How can I assist you with your booking today?' : 'كيف يمكنني مساعدتك في حجزك اليوم؟'}</p>
-                <input className="w-full p-3 border rounded-xl bg-card focus:outline-none focus:ring-2 focus:ring-primary" placeholder={lang === 'en' ? 'Type your message...' : 'اكتب رسالتك...'} />
+                <p className="text-sm mb-4">{t.ai.placeholder}</p>
+                <div className="relative">
+                    <input 
+                        className="w-full p-3 border rounded-xl bg-card focus:outline-none focus:ring-2 focus:ring-primary pr-10" 
+                        placeholder={t.ai.input} 
+                        value={aiMessage}
+                        onChange={(e) => setAiMessage(e.target.value)}
+                    />
+                    <button 
+                        onClick={() => {
+                            console.log(`Sending in ${lang}: ${aiMessage}`);
+                            setAiMessage("");
+                        }}
+                        className="absolute right-2 top-2 p-1 text-primary hover:bg-primary/10 rounded-lg"
+                    >
+                        <Send className="w-4 h-4" />
+                    </button>
+                </div>
             </div>
         )}
 

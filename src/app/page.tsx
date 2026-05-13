@@ -9,7 +9,7 @@ import FooterLogoEmphasis from '@/components/sections/footer/FooterLogoEmphasis'
 import HeroBillboardGallery from '@/components/sections/hero/HeroBillboardGallery';
 import NavbarStyleFullscreen from '@/components/navbar/NavbarStyleFullscreen/NavbarStyleFullscreen';
 import TestimonialCardThirteen from '@/components/sections/testimonial/TestimonialCardThirteen';
-import { Globe, Bot } from "lucide-react";
+import { Globe, Bot, X, MessageSquare } from "lucide-react";
 
 const content = {
   en: {
@@ -85,20 +85,24 @@ export default function LandingPage() {
                 className="flex items-center gap-2 bg-white/10 backdrop-blur p-2 rounded-full border border-white/20 hover:bg-white/20"
             >
                 <Globe className="w-4 h-4" />
-                <span className="text-sm">{lang === 'en' ? 'EN / AR' : 'AR / EN'}</span>
+                <span className="text-sm font-semibold">{lang.toUpperCase()}</span>
             </button>
             <button 
                 onClick={() => setShowAi(!showAi)}
                 className="flex items-center gap-2 bg-primary/10 backdrop-blur p-2 rounded-full border border-primary/20 hover:bg-primary/20"
             >
-                <Bot className="w-4 h-4 text-primary" />
+                {showAi ? <X className="w-4 h-4" /> : <Bot className="w-4 h-4 text-primary" />}
             </button>
         </div>
 
         {showAi && (
-            <div className="fixed bottom-20 right-4 z-[9998] w-80 bg-background border rounded-2xl shadow-2xl p-4">
-                <p className="text-sm mb-4">{lang === 'en' ? 'How can I help you today?' : 'كيف يمكنني مساعدتك اليوم؟'}</p>
-                <input className="w-full p-2 border rounded-lg bg-card" placeholder={lang === 'en' ? 'Type your message...' : 'اكتب رسالتك...'} />
+            <div className="fixed bottom-20 right-4 z-[9998] w-80 bg-background border rounded-2xl shadow-2xl p-6">
+                <div className="flex items-center gap-3 mb-4 text-primary">
+                    <Bot className="w-6 h-6" />
+                    <h3 className="font-bold">{lang === 'en' ? 'AI Assistant' : 'المساعد الذكي'}</h3>
+                </div>
+                <p className="text-sm mb-4">{lang === 'en' ? 'How can I assist you with your booking today?' : 'كيف يمكنني مساعدتك في حجزك اليوم؟'}</p>
+                <input className="w-full p-3 border rounded-xl bg-card focus:outline-none focus:ring-2 focus:ring-primary" placeholder={lang === 'en' ? 'Type your message...' : 'اكتب رسالتك...'} />
             </div>
         )}
 
@@ -116,7 +120,7 @@ export default function LandingPage() {
         <div id="hero" data-section="hero">
             <HeroBillboardGallery
               background={{ variant: "radial-gradient" }}
-              title="بيوت عطلات واحة المصيف للضيافه السياحي  "
+              title="بيوت عطلات واحة المصيف للضيافه السياحي"
               description="Wahat Almasif"
               buttons={[{ text: lang === 'en' ? "Book Now" : "احجز الآن", href: "#contact" }]}
               mediaItems={[

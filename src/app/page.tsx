@@ -9,7 +9,7 @@ import FooterLogoEmphasis from '@/components/sections/footer/FooterLogoEmphasis'
 import HeroBillboardGallery from '@/components/sections/hero/HeroBillboardGallery';
 import NavbarStyleFullscreen from '@/components/navbar/NavbarStyleFullscreen/NavbarStyleFullscreen';
 import TestimonialCardThirteen from '@/components/sections/testimonial/TestimonialCardThirteen';
-import { Globe } from "lucide-react";
+import { Globe, Bot } from "lucide-react";
 
 const content = {
   en: {
@@ -54,6 +54,7 @@ const content = {
 
 export default function LandingPage() {
   const [lang, setLang] = React.useState<'en' | 'ar'>('en');
+  const [showAi, setShowAi] = React.useState(false);
 
   const toggleLanguage = () => {
     const newLang = lang === 'en' ? 'ar' : 'en';
@@ -78,7 +79,7 @@ export default function LandingPage() {
         headingFontWeight="medium"
     >
       <ReactLenis root>
-        <div className="fixed top-4 right-4 z-[9999]">
+        <div className="fixed top-4 right-4 z-[9999] flex flex-col gap-2">
             <button 
                 onClick={toggleLanguage}
                 className="flex items-center gap-2 bg-white/10 backdrop-blur p-2 rounded-full border border-white/20 hover:bg-white/20"
@@ -86,75 +87,87 @@ export default function LandingPage() {
                 <Globe className="w-4 h-4" />
                 <span className="text-sm">{lang === 'en' ? 'EN / AR' : 'AR / EN'}</span>
             </button>
+            <button 
+                onClick={() => setShowAi(!showAi)}
+                className="flex items-center gap-2 bg-primary/10 backdrop-blur p-2 rounded-full border border-primary/20 hover:bg-primary/20"
+            >
+                <Bot className="w-4 h-4 text-primary" />
+            </button>
         </div>
 
-  <div id="nav" data-section="nav">
-      <NavbarStyleFullscreen
-      navItems={[
-        { name: lang === 'en' ? "Home" : "الرئيسية", id: "hero" },
-        { name: lang === 'en' ? "Chalets" : "الشاليهات", id: "chalets" },
-        { name: lang === 'en' ? "Reviews" : "الآراء", id: "reviews" },
-        { name: lang === 'en' ? "Contact" : "اتصل بنا", id: "contact" },
-      ]}
-      brandName="بيوت عطلات واحة المصيف"
-    />
-  </div>
+        {showAi && (
+            <div className="fixed bottom-20 right-4 z-[9998] w-80 bg-background border rounded-2xl shadow-2xl p-4">
+                <p className="text-sm mb-4">{lang === 'en' ? 'How can I help you today?' : 'كيف يمكنني مساعدتك اليوم؟'}</p>
+                <input className="w-full p-2 border rounded-lg bg-card" placeholder={lang === 'en' ? 'Type your message...' : 'اكتب رسالتك...'} />
+            </div>
+        )}
 
-  <div id="hero" data-section="hero">
-      <HeroBillboardGallery
-      background={{ variant: "radial-gradient" }}
-      title="Escape Into Luxury & Privacy"
-      description="Premium private family chalets designed for comfort, tranquility, and unforgettable hospitality in Abha."
-      buttons={[{ text: "Book Now", href: "#contact" }]}
-      mediaItems={[
-        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195248054-upddya8l.png" },
-        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195274963-ccgflh66.png" },
-        { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778192267988-pmpe4vzf.png" },
-      ]}
-    />
-  </div>
+        <div id="nav" data-section="nav">
+            <NavbarStyleFullscreen
+              navItems={[
+                { name: lang === 'en' ? "Home" : "الرئيسية", id: "hero" },
+                { name: lang === 'en' ? "Reviews" : "الآراء", id: "reviews" },
+                { name: lang === 'en' ? "Contact" : "اتصل بنا", id: "contact" },
+              ]}
+              brandName="Wahat Almasiaf"
+            />
+        </div>
 
-  <div id="reviews" data-section="reviews">
-      <TestimonialCardThirteen
-      animationType="slide-up"
-      textboxLayout="split"
-      testimonials={t.reviews.items.map(i => ({ ...i, handle: "@guest", id: i.id }))}
-      showRating={true}
-      useInvertedBackground={false}
-      title={t.reviews.title}
-      description={t.reviews.description}
-    />
-  </div>
+        <div id="hero" data-section="hero">
+            <HeroBillboardGallery
+              background={{ variant: "radial-gradient" }}
+              title="Escape Into Luxury & Privacy"
+              description="Premium private family chalets designed for comfort, tranquility, and unforgettable hospitality in Abha."
+              buttons={[{ text: lang === 'en' ? "Book Now" : "احجز الآن", href: "#contact" }]}
+              mediaItems={[
+                { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195248054-upddya8l.png" },
+                { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778195274963-ccgflh66.png" },
+                { imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_3DPjpK8EsdvIyzPAViSsWtfgqYn/uploaded-1778192267988-pmpe4vzf.png" },
+              ]}
+            />
+        </div>
 
-  <div id="faq" data-section="faq">
-      <FaqSplitText
-      useInvertedBackground={true}
-      faqs={t.faq.items}
-      sideTitle={t.faq.sideTitle}
-      sideDescription={t.faq.sideDescription}
-      faqsAnimation="blur-reveal"
-    />
-  </div>
+        <div id="reviews" data-section="reviews">
+            <TestimonialCardThirteen
+              animationType="slide-up"
+              textboxLayout="split"
+              testimonials={t.reviews.items.map(i => ({ ...i, handle: "@guest", id: i.id }))}
+              showRating={true}
+              useInvertedBackground={false}
+              title={t.reviews.title}
+              description={t.reviews.description}
+            />
+        </div>
 
-  <div id="contact" data-section="contact">
-      <ContactCenter
-      tag={t.contact.tag}
-      title={t.contact.title}
-      description={t.contact.description}
-      buttonText={t.contact.button}
-      background={{ variant: "radial-gradient" }}
-      useInvertedBackground={false}
-    />
-  </div>
+        <div id="faq" data-section="faq">
+            <FaqSplitText
+              useInvertedBackground={true}
+              faqs={t.faq.items}
+              sideTitle={t.faq.sideTitle}
+              sideDescription={t.faq.sideDescription}
+              faqsAnimation="blur-reveal"
+            />
+        </div>
 
-  <div id="footer" data-section="footer">
-      <FooterLogoEmphasis
-      columns={[
-        { items: [{ label: lang === 'en' ? "Home" : "الرئيسية", href: "#hero" }, { label: lang === 'en' ? "Contact" : "اتصل بنا", href: "#contact" }] }
-      ]}
-      logoText="Wahat Almasiaf"
-    />
-  </div>
+        <div id="contact" data-section="contact">
+            <ContactCenter
+              tag={t.contact.tag}
+              title={t.contact.title}
+              description={t.contact.description}
+              buttonText={t.contact.button}
+              background={{ variant: "radial-gradient" }}
+              useInvertedBackground={false}
+            />
+        </div>
+
+        <div id="footer" data-section="footer">
+            <FooterLogoEmphasis
+              columns={[
+                { items: [{ label: lang === 'en' ? "Home" : "الرئيسية", href: "#hero" }, { label: lang === 'en' ? "Contact" : "اتصل بنا", href: "#contact" }] }
+              ]}
+              logoText="Wahat Almasiaf"
+            />
+        </div>
       </ReactLenis>
     </ThemeProvider>
   );
